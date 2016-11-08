@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Worktimes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for workTime in workTimes %}
+            <tr>
+                <td><a href="{{ path('worktime_show', { 'id': workTime.id }) }}">{{ workTime.id }}</a></td>
+                <td>{% if workTime.start %}{{ workTime.start|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if workTime.end %}{{ workTime.end|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('worktime_show', { 'id': workTime.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('worktime_edit', { 'id': workTime.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('worktime_new') }}">Create a new workTime</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+work_tracker_work_time:
+    resource: "@WorkTrackerBundle/Controller/WorkTimeController.php"
+    type:     annotation
+
+work_tracker:
+    resource: "@WorkTrackerBundle/Resources/config/routing.yml"
+    prefix:   /

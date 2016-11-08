@@ -1,0 +1,18 @@
+WorkTrackerBundle\Entity\WorkTime:
+    type: entity
+    table: null
+    repositoryClass: WorkTrackerBundle\Repository\WorkTimeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        start:
+            type: datetimetz
+            nullable: true
+        end:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }
