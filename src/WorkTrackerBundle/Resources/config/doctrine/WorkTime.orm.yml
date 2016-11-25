@@ -10,7 +10,7 @@ WorkTrackerBundle\Entity\WorkTime:
                 strategy: AUTO
     fields:
         start:
-            type: datetimetz
+            type: datetime
             nullable: true
         end:
             type: datetime
