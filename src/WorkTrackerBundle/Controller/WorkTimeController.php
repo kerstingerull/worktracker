@@ -26,7 +26,7 @@ class WorkTimeController extends Controller
 
         $workTimes = $em->getRepository('WorkTrackerBundle:WorkTime')->findAll();
 
-        return $this->render('worktime/index.html.twig', array(
+        return $this->render('WorkTrackerBundle::worktime/index.html.twig', array(
             'workTimes' => $workTimes,
         ));
     }
@@ -51,7 +51,7 @@ class WorkTimeController extends Controller
             return $this->redirectToRoute('worktime_show', array('id' => $workTime->getId()));
         }
 
-        return $this->render('worktime/new.html.twig', array(
+        return $this->render('WorkTrackerBundle::worktime/new.html.twig', array(
             'workTime' => $workTime,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class WorkTimeController extends Controller
     {
         $deleteForm = $this->createDeleteForm($workTime);
 
-        return $this->render('worktime/show.html.twig', array(
+        return $this->render('WorkTrackerBundle::worktime/show.html.twig', array(
             'workTime' => $workTime,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +91,7 @@ class WorkTimeController extends Controller
             return $this->redirectToRoute('worktime_edit', array('id' => $workTime->getId()));
         }
 
-        return $this->render('worktime/edit.html.twig', array(
+        return $this->render('WorkTrackerBundle::worktime/edit.html.twig', array(
             'workTime' => $workTime,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
