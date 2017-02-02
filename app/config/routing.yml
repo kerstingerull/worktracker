@@ -5,3 +5,9 @@ work_tracker_work_time:
 work_tracker:
     resource: "@WorkTrackerBundle/Resources/config/routing.yml"
     prefix:   /
+
+payment_get:
+    path: /payment/{id}
+    defaults: { _controller: PaymentBundle:Payment:get }
+    requirements:
+      id: '\d+'
